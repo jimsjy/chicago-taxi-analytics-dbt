@@ -55,24 +55,19 @@ Trips were first aggregated at the daily level to calculate the total number of 
 
 This approach allows for a clear evaluation of how taxi demand differs on holidays compared to regular days within the same time window.
 
-Additonal Insight:
-Insight 1: Tip Earnings Are Concentrated Among a Small Group of Taxis
+Additonal Insight: Analysis of trips by taxi company shows that some companies consistently earn more in tips and complete more trips than others.
 
-A small subset of taxis earns a disproportionately high amount of total tips during the Oct–Dec 2023 period. This suggests that certain drivers or operating patterns consistently perform better than others.
-
-Business value: Fleet operators can study and replicate the behaviors of top-performing taxis and design incentives to retain and motivate high earners.
-Supporting data: Top 100 taxis ranked by total tips and trip volume (Question 1).
+Business value: Helps fleet managers identify high-performing companies and benchmark their practices.
+- Can guide resource allocation, incentives, and partnerships to improve overall performance.
 
 Insight 2: Analysis of trip start times shows that taxi demand is highest during evening hours (e.g., 6–9 PM) and lowest late at night.
-
 Business value: Helps fleet operators schedule drivers efficiently for peak demand periods.
+- Supports dynamic pricing, shift planning, and resource allocation.
 
-Supports dynamic pricing, shift planning, and resource allocation.
-
-Supporting data: Aggregated trips by hour of day from stg_taxi_trips (Oct–Dec 2023).
 
 Google Looker Dashboard: https://lookerstudio.google.com/reporting/00a0213a-e664-4169-8570-49e8c9a81e06
 Git Repo: https://github.com/jimsjy/chicago-taxi-analytics-dbt/
+
 
 
 

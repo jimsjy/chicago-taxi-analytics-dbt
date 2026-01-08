@@ -71,5 +71,6 @@ Business value: Identifying taxis with frequent long shifts helps operators mana
 Supporting data: Number of long-shift days and average shift duration per taxi (Question 2).
 
 Google Looker Dashboard: https://lookerstudio.google.com/reporting/00a0213a-e664-4169-8570-49e8c9a81e06
-Git Repo: 
->>>>>>> 8cb3c3f (Initial dbt project with BigQuery models and analysis)
+Git Repo: https://github.com/jimsjy/chicago-taxi-analytics-dbt/
+
+

@@ -63,14 +63,16 @@ A small subset of taxis earns a disproportionately high amount of total tips dur
 Business value: Fleet operators can study and replicate the behaviors of top-performing taxis and design incentives to retain and motivate high earners.
 Supporting data: Top 100 taxis ranked by total tips and trip volume (Question 1).
 
-Insight 2: Repeated Long Shifts May Indicate Fatigue and Operational Risk
+Insight 2: Analysis of trip start times shows that taxi demand is highest during evening hours (e.g., 6–9 PM) and lowest late at night.
 
-Some taxis consistently operate shifts longer than 12 hours per day, often across many days in the analysis period.
+Business value: Helps fleet operators schedule drivers efficiently for peak demand periods.
 
-Business value: Identifying taxis with frequent long shifts helps operators manage driver fatigue, improve safety, and ensure compliance with working-hour policies.
-Supporting data: Number of long-shift days and average shift duration per taxi (Question 2).
+Supports dynamic pricing, shift planning, and resource allocation.
+
+Supporting data: Aggregated trips by hour of day from stg_taxi_trips (Oct–Dec 2023).
 
 Google Looker Dashboard: https://lookerstudio.google.com/reporting/00a0213a-e664-4169-8570-49e8c9a81e06
 Git Repo: https://github.com/jimsjy/chicago-taxi-analytics-dbt/
+
 
 

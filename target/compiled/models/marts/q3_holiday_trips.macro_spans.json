@@ -1,0 +1,54 @@
+[
+  {
+    "macro_span": {
+      "start": {
+        "line": 1,
+        "col": 1,
+        "index": 0
+      },
+      "stop": {
+        "line": 1,
+        "col": 35,
+        "index": 34
+      }
+    },
+    "expanded_span": {
+      "start": {
+        "line": 1,
+        "col": 1,
+        "index": 0
+      },
+      "stop": {
+        "line": 1,
+        "col": 1,
+        "index": 0
+      }
+    }
+  },
+  {
+    "macro_span": {
+      "start": {
+        "line": 7,
+        "col": 10,
+        "index": 167
+      },
+      "stop": {
+        "line": 7,
+        "col": 37,
+        "index": 194
+      }
+    },
+    "expanded_span": {
+      "start": {
+        "line": 7,
+        "col": 10,
+        "index": 133
+      },
+      "stop": {
+        "line": 7,
+        "col": 63,
+        "index": 186
+      }
+    }
+  }
+]

@@ -1,0 +1,6 @@
+name: chicago-taxi-analytics
+version: 1.0
+profile: my_bigquery_project
+model-paths: ["models"]
+target-path: "target"
+clean-targets: ["target"]

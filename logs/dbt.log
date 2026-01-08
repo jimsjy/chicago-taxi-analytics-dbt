@@ -1,0 +1,663 @@
+==================== 2026-01-08T12:43:17.301785Z | 019b9da1-fbb2-7ac3-a1e3-60d432c9cef5 ====================
+12:43:17.301915 [info ]: dbt-fusion 2.0.0-preview.92
+12:43:17.302568 [info ]: Started loading project
+12:43:17.309054 [info ]: Loading ~/.dbt/profiles.yml
+12:43:17.316892 [info ]: Finished loading project [  0.01s]
+12:43:17.317251 [info ]: Started debugging
+12:43:17.317532 [info ]: Debugging profile: dev
+12:43:17.317962 [info ]: Debugging dbt version: 2.0.0-preview.92
+12:43:17.318204 [info ]: Debugging platform: windows x86_64 (windows)
+12:43:17.318447 [info ]: Debugging adapter type: bigquery (remote)
+12:43:17.351995 [info ]: Debugging dependencies:
+  git: OK
+12:43:17.353964 [info ]: Debugging connection:
+  "database": "chicago_taxi_analytics",
+  "schema": "analytics",
+  "priority": "interactive",
+  "method": "oauth",
+  "location": "US",
+  "dataproc_batch": null,
+  "job_execution_timeout_seconds": 300,
+  "job_retries": 1
+12:43:17.863822 [debug]: Query executed on node unknown:
+select 1 as id
+12:43:18.869199 [info ]: Finished debugging [  1.55s]
+12:43:18.869705 [error]: dbt1011: [BigQuery] googleapi: Error 400: Invalid project ID 'chicago_taxi_analytics'. Project IDs must contain 6-63 lowercase letters, digits, or dashes. Some project IDs also include domain name separated by a colon. IDs must start with a letter and may not end with a dash., invalid
+12:43:19.078565 [info ]: 
+==================== Execution Summary =====================
+Finished 'debug' with 1 error for target 'dev' [1.8s]
+==================== 2026-01-08T12:45:10.695445Z | 019b9da3-b6a3-7ad3-b0b0-97af1354cecc ====================
+12:45:10.695579 [info ]: dbt-fusion 2.0.0-preview.92
+12:45:10.696844 [info ]: Started loading project
+12:45:10.702726 [info ]: Loading ~/.dbt/profiles.yml
+12:45:10.704389 [info ]: Finished loading project [  0.01s]
+12:45:10.708428 [info ]: Started debugging
+12:45:10.708759 [info ]: Debugging profile: dev
+12:45:10.709624 [info ]: Debugging dbt version: 2.0.0-preview.92
+12:45:10.710441 [info ]: Debugging platform: windows x86_64 (windows)
+12:45:10.711131 [info ]: Debugging adapter type: bigquery (remote)
+12:45:10.743354 [info ]: Debugging dependencies:
+  git: OK
+12:45:10.745033 [info ]: Debugging connection:
+  "database": "chicago-taxi-analytics",
+  "schema": "analytics",
+  "priority": "interactive",
+  "method": "oauth",
+  "location": "US",
+  "dataproc_batch": null,
+  "job_execution_timeout_seconds": 300,
+  "job_retries": 1
+12:45:14.319887 [debug]: Query executed on node unknown:
+select 1 as id
+12:45:14.321977 [info ]: Debugging connection test: OK
+12:45:14.324232 [info ]: Debugged All checks passed!
+12:45:14.325309 [info ]: Finished debugging [  3.62s]
+12:45:15.224961 [info ]: 
+==================== Execution Summary =====================
+Finished 'debug' successfully for target 'dev' [4.5s]
+==================== 2026-01-08T12:45:45.261421Z | 019b9da4-3da9-7751-857d-b75f43780b0b ====================
+12:45:45.261527 [info ]: dbt-fusion 2.0.0-preview.92
+12:45:45.263984 [info ]: Started loading project
+12:45:45.268960 [info ]: Loading ~/.dbt/profiles.yml
+12:45:45.410410 [info ]: Finished loading project [  0.15s]
+12:45:45.418518 [info ]: Started parsing
+12:45:45.575354 [info ]: Finished parsing [  0.16s]
+12:45:45.622779 [info ]: Started scheduling
+12:45:45.631685 [info ]: Finished scheduling [  0.01s]
+12:45:45.878247 [info ]: Started building task graph
+12:45:45.889811 [info ]: Finished building task graph [  0.01s]
+12:45:49.361504 [debug]: Query executed on node unknown:
+/* {"app": "dbt", "connection_name": "", "dbt_version": "2.0.0", "profile_name": "my_bigquery_project", "target_name": "dev"} */
+
+    select distinct schema_name from `chicago-taxi-analytics`.INFORMATION_SCHEMA.SCHEMATA;
+  
+12:45:49.375557 [info ]: Started rendering (1 nodes)
+12:45:49.377276 [info ]: Started model analytics.stg_taxi_trips
+12:45:49.378064 [debug]: Started rendering model analytics.stg_taxi_trips
+12:45:49.402450 [debug]: Finished rendering [  0.02s] model analytics.stg_taxi_trips [success]
+12:45:49.405140 [info ]: Finished rendering [  0.03s] (1 nodes, 0 skipped, 0 errors)
+12:45:49.406238 [info ]: Started analyzing (1 nodes)
+12:45:49.406493 [debug]: Started analyzing model analytics.stg_taxi_trips
+12:45:50.180587 [debug]: Finished analyzing [  0.77s] model analytics.stg_taxi_trips [success]
+12:45:50.181548 [info ]: Finished analyzing [  0.78s] (1 nodes, 0 skipped, 0 errors)
+12:45:50.183190 [info ]: Started running (1 nodes)
+12:45:50.183450 [debug]: Started running model analytics.stg_taxi_trips
+12:45:52.819648 [debug]: Query executed on node model.chicago-taxi-analytics.stg_taxi_trips:
+SELECT
+    table_catalog,
+    table_schema,
+    table_name,
+    table_type
+FROM 
+    `chicago-taxi-analytics`.`analytics`.INFORMATION_SCHEMA.TABLES
+12:45:52.839933 [debug]: Writing runtime sql for node "model.chicago-taxi-analytics.stg_taxi_trips"
+12:45:55.236380 [debug]: Query executed on node model.chicago-taxi-analytics.stg_taxi_trips:
+/* {"app": "dbt", "dbt_version": "2.0.0", "node_id": "model.chicago-taxi-analytics.stg_taxi_trips", "profile_name": "my_bigquery_project", "target_name": "dev"} */
+
+
+  create or replace view `chicago-taxi-analytics`.`analytics`.`stg_taxi_trips`
+  OPTIONS()
+  as with source as (
+    select *
+    from `bigquery-public-data.chicago_taxi_trips.taxi_trips`
+)
+select *
+from source;
+
+
+12:45:55.243239 [info ]:  Succeeded [  5.86s] model analytics.stg_taxi_trips (view)
+12:45:55.245960 [debug]: Finished running [  5.06s] model analytics.stg_taxi_trips [success]
+12:45:55.246854 [info ]: Finished running [  5.06s] (1 nodes, 0 skipped, 0 errors)
+12:45:55.525128 [info ]: 
+==================== Execution Summary =====================
+Finished 'run' successfully for target 'dev' [10.3s]
+Processed: 1 model
+Summary: 1 total | 1 success
+==================== 2026-01-08T15:27:54.009510Z | 019b9e38-b08e-7470-860e-71f66bf63c1c ====================
+15:27:54.009617 [info ]: dbt-fusion 2.0.0-preview.92
+15:27:54.010293 [info ]: Started loading project
+15:27:54.015171 [info ]: Loading ~/.dbt/profiles.yml
+15:27:54.110094 [info ]: Finished loading project [  0.10s]
+15:27:54.111223 [info ]: Started parsing
+15:27:54.155870 [info ]: Finished parsing [  0.04s]
+15:27:54.175239 [info ]: Started scheduling
+15:27:54.176798 [info ]: Finished scheduling [  0.00s]
+ Downloading `chicago-taxi-analytics`.`analytics`.`stg_taxi_trips` (schema)
+15:27:54.916047 [info ]: Started building task graph
+15:27:54.917127 [info ]: Finished building task graph [  0.00s]
+15:27:58.298322 [debug]: Query executed on node unknown:
+/* {"app": "dbt", "connection_name": "", "dbt_version": "2.0.0", "profile_name": "my_bigquery_project", "target_name": "dev"} */
+
+    select distinct schema_name from `chicago-taxi-analytics`.INFORMATION_SCHEMA.SCHEMATA;
+  
+15:27:58.298697 [info ]: Started rendering (1 nodes)
+15:27:58.299029 [info ]: Started model analytics.q1_top_tipping_taxis
+15:27:58.299068 [debug]: Started rendering model analytics.q1_top_tipping_taxis
+15:27:58.302155 [debug]: Finished rendering [  0.00s] model analytics.q1_top_tipping_taxis [success]
+15:27:58.302868 [info ]: Finished rendering [  0.00s] (1 nodes, 0 skipped, 0 errors)
+15:27:58.303586 [info ]: Started analyzing (1 nodes)
+15:27:58.303770 [debug]: Started analyzing model analytics.q1_top_tipping_taxis
+15:27:58.474929 [debug]: Finished analyzing [  0.17s] model analytics.q1_top_tipping_taxis [success]
+15:27:58.476012 [info ]: Finished analyzing [  0.17s] (1 nodes, 0 skipped, 0 errors)
+15:27:58.477083 [info ]: Started running (1 nodes)
+15:27:58.477222 [debug]: Started running model analytics.q1_top_tipping_taxis
+15:28:02.222650 [debug]: Query executed on node model.chicago-taxi-analytics.q1_top_tipping_taxis:
+SELECT
+    table_catalog,
+    table_schema,
+    table_name,
+    table_type
+FROM 
+    `chicago-taxi-analytics`.`analytics`.INFORMATION_SCHEMA.TABLES
+15:28:02.227583 [debug]: Writing runtime sql for node "model.chicago-taxi-analytics.q1_top_tipping_taxis"
+15:28:04.694043 [debug]: Query executed on node model.chicago-taxi-analytics.q1_top_tipping_taxis:
+/* {"app": "dbt", "dbt_version": "2.0.0", "node_id": "model.chicago-taxi-analytics.q1_top_tipping_taxis", "profile_name": "my_bigquery_project", "target_name": "dev"} */
+
+
+  create or replace view `chicago-taxi-analytics`.`analytics`.`q1_top_tipping_taxis`
+  OPTIONS()
+  as WITH recent_trips AS (
+    SELECT *
+    FROM `chicago-taxi-analytics`.`analytics`.`stg_taxi_trips`
+    WHERE trip_start_timestamp >= TIMESTAMP('2023-10-01')
+      AND trip_start_timestamp <= TIMESTAMP('2023-12-31')
+)
+
+SELECT
+    taxi_id,
+    company,
+    SUM(tips) AS total_tips,
+    COUNT(*) AS total_trips
+FROM recent_trips
+GROUP BY taxi_id, company
+ORDER BY total_tips DESC
+LIMIT 100;
+
+
+15:28:04.695009 [info ]:  Succeeded [  6.39s] model analytics.q1_top_tipping_taxis (view)
+15:28:04.696252 [debug]: Finished running [  6.22s] model analytics.q1_top_tipping_taxis [success]
+15:28:04.696749 [info ]: Finished running [  6.22s] (1 nodes, 0 skipped, 0 errors)
+15:28:04.852281 [info ]: 
+==================== Execution Summary =====================
+Finished 'run' successfully for target 'dev' [10.8s]
+Processed: 1 model
+Summary: 1 total | 1 success
+==================== 2026-01-08T15:29:41.521003Z | 019b9e3a-548e-77b3-b227-750a821496f4 ====================
+15:29:41.521105 [info ]: dbt-fusion 2.0.0-preview.92
+15:29:41.521843 [info ]: Started loading project
+15:29:41.526570 [info ]: Loading ~/.dbt/profiles.yml
+15:29:41.621762 [info ]: Finished loading project [  0.10s]
+15:29:41.622798 [info ]: Started parsing
+15:29:41.675231 [info ]: Finished parsing [  0.05s]
+15:29:41.692024 [info ]: Started scheduling
+15:29:41.692553 [info ]: Finished scheduling [  0.00s]
+15:29:41.833882 [info ]: Started building task graph
+15:29:41.834405 [info ]: Finished building task graph [  0.00s]
+15:29:45.409612 [debug]: Query executed on node unknown:
+/* {"app": "dbt", "connection_name": "", "dbt_version": "2.0.0", "profile_name": "my_bigquery_project", "target_name": "dev"} */
+
+    select distinct schema_name from `chicago-taxi-analytics`.INFORMATION_SCHEMA.SCHEMATA;
+  
+15:29:45.409954 [info ]: Started rendering (1 nodes)
+15:29:45.410256 [info ]: Started model analytics.q1_top_tipping_taxis
+15:29:45.410282 [debug]: Started rendering model analytics.q1_top_tipping_taxis
+15:29:45.412079 [debug]: Finished rendering [  0.00s] model analytics.q1_top_tipping_taxis [success]
+15:29:45.412640 [info ]: Finished rendering [  0.00s] (1 nodes, 0 skipped, 0 errors)
+15:29:45.413253 [info ]: Started analyzing (1 nodes)
+15:29:45.413380 [debug]: Started analyzing model analytics.q1_top_tipping_taxis
+15:29:45.463470 [debug]: Finished analyzing [  0.05s] model analytics.q1_top_tipping_taxis [success]
+15:29:45.464471 [info ]: Finished analyzing [  0.05s] (1 nodes, 0 skipped, 0 errors)
+15:29:45.465188 [info ]: Started running (1 nodes)
+15:29:45.465324 [debug]: Started running model analytics.q1_top_tipping_taxis
+15:29:48.818135 [debug]: Query executed on node model.chicago-taxi-analytics.q1_top_tipping_taxis:
+SELECT
+    table_catalog,
+    table_schema,
+    table_name,
+    table_type
+FROM 
+    `chicago-taxi-analytics`.`analytics`.INFORMATION_SCHEMA.TABLES
+15:29:48.819911 [debug]: Applying DROP to: `chicago-taxi-analytics`.`analytics`.`q1_top_tipping_taxis`
+15:29:50.155833 [debug]: Query executed on node model.chicago-taxi-analytics.q1_top_tipping_taxis:
+/* {"app": "dbt", "dbt_version": "2.0.0", "node_id": "model.chicago-taxi-analytics.q1_top_tipping_taxis", "profile_name": "my_bigquery_project", "target_name": "dev"} */
+
+    drop view if exists `chicago-taxi-analytics`.`analytics`.`q1_top_tipping_taxis`
+
+15:29:50.449866 [error]: dbt1014: Error executing materialization macro 'dbt_bigquery.materialization_table_bigquery' for model model.chicago-taxi-analytics.q1_top_tipping_taxis: [BigQuery] googleapi: Error 404: Not found: Table chicago-taxi-analytics:analytics.q1_top_tipping_taxis, notFound
+(in compiled\models\marts\q1_top_tipping_taxis.sql:1:13)
+(in dbt_internal_packages\dbt-bigquery\macros\materializations\table.sql:27:20)
+  --> compiled\models\marts\q1_top_tipping_taxis.sql:1:13
+15:29:50.450651 [info ]:     Failed [  5.04s] model analytics.q1_top_tipping_taxis (table)
+15:29:50.452220 [debug]: Finished running [  4.99s] model analytics.q1_top_tipping_taxis [error]
+15:29:50.452671 [info ]: Finished running [  4.99s] (1 nodes, 0 skipped, 1 errors)
+15:29:50.611664 [info ]: 
+==================== Execution Summary =====================
+Finished 'run' with 1 error for target 'dev' [9.1s]
+Processed: 1 model
+Summary: 1 total | 1 error
+==================== 2026-01-08T15:31:28.617290Z | 019b9e3b-f6e6-7750-9cb1-aea23bbf8af7 ====================
+15:31:28.617395 [info ]: dbt-fusion 2.0.0-preview.92
+15:31:28.618483 [info ]: Started loading project
+15:31:28.623897 [info ]: Loading ~/.dbt/profiles.yml
+15:31:28.719859 [info ]: Finished loading project [  0.10s]
+15:31:28.720731 [info ]: Started parsing
+15:31:28.762270 [info ]: Finished parsing [  0.04s]
+15:31:28.782449 [info ]: Started scheduling
+15:31:28.782960 [info ]: Finished scheduling [  0.00s]
+15:31:28.923785 [info ]: Started building task graph
+15:31:28.924268 [info ]: Finished building task graph [  0.00s]
+15:31:32.483938 [debug]: Query executed on node unknown:
+/* {"app": "dbt", "connection_name": "", "dbt_version": "2.0.0", "profile_name": "my_bigquery_project", "target_name": "dev"} */
+
+    select distinct schema_name from `chicago-taxi-analytics`.INFORMATION_SCHEMA.SCHEMATA;
+  
+15:31:32.484270 [info ]: Started rendering (1 nodes)
+15:31:32.484538 [info ]: Started model analytics.q1_top_tipping_taxis
+15:31:32.484564 [debug]: Started rendering model analytics.q1_top_tipping_taxis
+15:31:32.486126 [debug]: Finished rendering [  0.00s] model analytics.q1_top_tipping_taxis [success]
+15:31:32.486643 [info ]: Finished rendering [  0.00s] (1 nodes, 0 skipped, 0 errors)
+15:31:32.487286 [info ]: Started analyzing (1 nodes)
+15:31:32.487448 [debug]: Started analyzing model analytics.q1_top_tipping_taxis
+15:31:32.526923 [debug]: Finished analyzing [  0.04s] model analytics.q1_top_tipping_taxis [success]
+15:31:32.527732 [info ]: Finished analyzing [  0.04s] (1 nodes, 0 skipped, 0 errors)
+15:31:32.528579 [info ]: Started running (1 nodes)
+15:31:32.528817 [debug]: Started running model analytics.q1_top_tipping_taxis
+15:31:35.891897 [debug]: Query executed on node model.chicago-taxi-analytics.q1_top_tipping_taxis:
+SELECT
+    table_catalog,
+    table_schema,
+    table_name,
+    table_type
+FROM 
+    `chicago-taxi-analytics`.`analytics`.INFORMATION_SCHEMA.TABLES
+15:31:35.899326 [debug]: Writing runtime sql for node "model.chicago-taxi-analytics.q1_top_tipping_taxis"
+15:31:40.762229 [debug]: Query executed on node model.chicago-taxi-analytics.q1_top_tipping_taxis:
+/* {"app": "dbt", "dbt_version": "2.0.0", "node_id": "model.chicago-taxi-analytics.q1_top_tipping_taxis", "profile_name": "my_bigquery_project", "target_name": "dev"} */
+
+  
+    
+
+    create or replace table `chicago-taxi-analytics`.`analytics`.`q1_top_tipping_taxis`
+      
+    
+    
+
+    
+    OPTIONS()
+    as (
+      
+
+WITH recent_trips AS (
+    SELECT *
+    FROM `chicago-taxi-analytics`.`analytics`.`stg_taxi_trips`
+    WHERE trip_start_timestamp >= TIMESTAMP('2023-10-01')
+      AND trip_start_timestamp <= TIMESTAMP('2023-12-31')
+)
+
+SELECT
+    taxi_id,
+    company,
+    SUM(tips) AS total_tips,
+    COUNT(*) AS total_trips
+FROM recent_trips
+GROUP BY taxi_id, company
+ORDER BY total_tips DESC
+LIMIT 100
+    );
+  
+15:31:40.763033 [info ]:  Succeeded [  8.27s] model analytics.q1_top_tipping_taxis (table)
+15:31:40.763970 [debug]: Finished running [  8.24s] model analytics.q1_top_tipping_taxis [success]
+15:31:40.764398 [info ]: Finished running [  8.24s] (1 nodes, 0 skipped, 0 errors)
+15:31:40.904192 [info ]: 
+==================== Execution Summary =====================
+Finished 'run' successfully for target 'dev' [12.3s]
+Processed: 1 model
+Summary: 1 total | 1 success
+==================== 2026-01-08T15:38:32.617622Z | 019b9e42-6f26-7510-81f6-b3693fa67362 ====================
+15:38:32.617731 [info ]: dbt-fusion 2.0.0-preview.92
+15:38:32.618453 [info ]: Started loading project
+15:38:32.624583 [info ]: Loading ~/.dbt/profiles.yml
+15:38:32.727722 [info ]: Finished loading project [  0.11s]
+15:38:32.728827 [info ]: Started parsing
+15:38:32.768912 [info ]: Finished parsing [  0.04s]
+15:38:32.787560 [info ]: Started scheduling
+15:38:32.788079 [info ]: Finished scheduling [  0.00s]
+15:38:32.926678 [info ]: Started building task graph
+15:38:32.927232 [info ]: Finished building task graph [  0.00s]
+15:38:36.898227 [debug]: Query executed on node unknown:
+/* {"app": "dbt", "connection_name": "", "dbt_version": "2.0.0", "profile_name": "my_bigquery_project", "target_name": "dev"} */
+
+    select distinct schema_name from `chicago-taxi-analytics`.INFORMATION_SCHEMA.SCHEMATA;
+  
+15:38:36.898616 [info ]: Started rendering (1 nodes)
+15:38:36.899026 [info ]: Started model analytics.q2_top_overworkers
+15:38:36.899052 [debug]: Started rendering model analytics.q2_top_overworkers
+15:38:36.900545 [debug]: Finished rendering [  0.00s] model analytics.q2_top_overworkers [success]
+15:38:36.901624 [info ]: Finished rendering [  0.00s] (1 nodes, 0 skipped, 0 errors)
+15:38:36.902272 [info ]: Started analyzing (1 nodes)
+15:38:36.902435 [debug]: Started analyzing model analytics.q2_top_overworkers
+15:38:37.484891 [debug]: Finished analyzing [  0.58s] model analytics.q2_top_overworkers [success]
+15:38:37.486425 [info ]: Finished analyzing [  0.58s] (1 nodes, 0 skipped, 0 errors)
+15:38:37.487611 [info ]: Started running (1 nodes)
+15:38:37.487740 [debug]: Started running model analytics.q2_top_overworkers
+15:38:40.654667 [debug]: Query executed on node model.chicago-taxi-analytics.q2_top_overworkers:
+SELECT
+    table_catalog,
+    table_schema,
+    table_name,
+    table_type
+FROM 
+    `chicago-taxi-analytics`.`analytics`.INFORMATION_SCHEMA.TABLES
+15:38:40.657366 [debug]: Writing runtime sql for node "model.chicago-taxi-analytics.q2_top_overworkers"
+15:38:41.274830 [debug]: Query executed on node model.chicago-taxi-analytics.q2_top_overworkers:
+/* {"app": "dbt", "dbt_version": "2.0.0", "node_id": "model.chicago-taxi-analytics.q2_top_overworkers", "profile_name": "my_bigquery_project", "target_name": "dev"} */
+
+  
+    
+
+    create or replace table `chicago-taxi-analytics`.`analytics`.`q2_top_overworkers`
+      
+    
+    
+
+    
+    OPTIONS()
+    as (
+      
+WITH daily_shifts AS (
+  SELECT
+    taxi_id,
+    DATE(trip_start_timestamp) AS trip_date,
+    TIMESTAMP_DIFF(MAX(trip_end_timestamp), MIN(trip_start_timestamp), HOUR) AS shift_hours
+  FROM `bigquery-public-data.chicago_taxi_trips.taxi_trips`
+  WHERE trip_start_timestamp BETWEEN TIMESTAMP('2023-10-01') AND TIMESTAMP('2023-12-31')
+  GROUP BY taxi_id, DATE(trip_start_timestamp)
+  HAVING TIMESTAMP_DIFF(MAX(trip_end_timestamp), MIN(trip_start_timestamp), HOUR) > 12
+)
+
+SELECT
+  taxi_id,
+  COUNT(*) AS long_shift_days,
+  AVG(shift_hours) AS avg_shift_hours
+FROM daily_shifts
+GROUP BY taxi_id
+ORDER BY long_shift_days DESC, avg_shift_hours DESC
+LIMIT 100;
+    );
+  
+15:38:42.275683 [error]: dbt1014: Error executing materialization macro 'dbt_bigquery.materialization_table_bigquery' for model model.chicago-taxi-analytics.q2_top_overworkers: [BigQuery] googleapi: Error 400: Syntax error: Expected ")" but got ";" at [33:10], invalidQuery (Query: https://console.cloud.google.com/bigquery?project=chicago-taxi-analytics&j=bq:US:nqlCSxcGXudO7iRMPusys8uj2Ff&page=queryresults)
+(in compiled\models\marts\q2_top_overworkers.sql:1:13)
+(in dbt_internal_packages\dbt-bigquery\macros\materializations\table.sql:33:12)
+(in dbt_internal_packages\dbt-adapters\macros\etc\statement.sql:14:35)
+  --> compiled\models\marts\q2_top_overworkers.sql:1:13
+15:38:42.275778 [info ]:     Failed [  5.37s] model analytics.q2_top_overworkers (table)
+15:38:42.277506 [debug]: Finished running [  4.79s] model analytics.q2_top_overworkers [error]
+15:38:42.278161 [info ]: Finished running [  4.79s] (1 nodes, 0 skipped, 1 errors)
+15:38:42.432296 [info ]: 
+==================== Execution Summary =====================
+Finished 'run' with 1 error for target 'dev' [9.8s]
+Processed: 1 model
+Summary: 1 total | 1 error
+==================== 2026-01-08T15:39:08.612869Z | 019b9e42-fbba-7a72-88a8-575b0be23f68 ====================
+15:39:08.612999 [info ]: dbt-fusion 2.0.0-preview.92
+15:39:08.613725 [info ]: Started loading project
+15:39:08.619214 [info ]: Loading ~/.dbt/profiles.yml
+15:39:08.715434 [info ]: Finished loading project [  0.10s]
+15:39:08.716493 [info ]: Started parsing
+15:39:08.757757 [info ]: Finished parsing [  0.04s]
+15:39:08.779506 [info ]: Started scheduling
+15:39:08.780018 [info ]: Finished scheduling [  0.00s]
+15:39:08.917152 [info ]: Started building task graph
+15:39:08.917660 [info ]: Finished building task graph [  0.00s]
+15:39:12.299583 [debug]: Query executed on node unknown:
+/* {"app": "dbt", "connection_name": "", "dbt_version": "2.0.0", "profile_name": "my_bigquery_project", "target_name": "dev"} */
+
+    select distinct schema_name from `chicago-taxi-analytics`.INFORMATION_SCHEMA.SCHEMATA;
+  
+15:39:12.299902 [info ]: Started rendering (1 nodes)
+15:39:12.300225 [info ]: Started model analytics.q2_top_overworkers
+15:39:12.300252 [debug]: Started rendering model analytics.q2_top_overworkers
+15:39:12.301693 [debug]: Finished rendering [  0.00s] model analytics.q2_top_overworkers [success]
+15:39:12.302100 [info ]: Finished rendering [  0.00s] (1 nodes, 0 skipped, 0 errors)
+15:39:12.302704 [info ]: Started analyzing (1 nodes)
+15:39:12.302845 [debug]: Started analyzing model analytics.q2_top_overworkers
+15:39:12.841617 [debug]: Finished analyzing [  0.54s] model analytics.q2_top_overworkers [success]
+15:39:12.843005 [info ]: Finished analyzing [  0.54s] (1 nodes, 0 skipped, 0 errors)
+15:39:12.844269 [info ]: Started running (1 nodes)
+15:39:12.844404 [debug]: Started running model analytics.q2_top_overworkers
+15:39:16.693333 [debug]: Query executed on node model.chicago-taxi-analytics.q2_top_overworkers:
+SELECT
+    table_catalog,
+    table_schema,
+    table_name,
+    table_type
+FROM 
+    `chicago-taxi-analytics`.`analytics`.INFORMATION_SCHEMA.TABLES
+15:39:16.696282 [debug]: Writing runtime sql for node "model.chicago-taxi-analytics.q2_top_overworkers"
+15:39:17.305944 [debug]: Query executed on node model.chicago-taxi-analytics.q2_top_overworkers:
+/* {"app": "dbt", "dbt_version": "2.0.0", "node_id": "model.chicago-taxi-analytics.q2_top_overworkers", "profile_name": "my_bigquery_project", "target_name": "dev"} */
+
+  
+    
+
+    create or replace table `chicago-taxi-analytics`.`analytics`.`q2_top_overworkers`
+      
+    
+    
+
+    
+    OPTIONS()
+    as (
+      
+
+WITH daily_shifts AS (
+  SELECT
+    taxi_id,
+    DATE(trip_start_timestamp) AS trip_date,
+    TIMESTAMP_DIFF(MAX(trip_end_timestamp), MIN(trip_start_timestamp), HOUR) AS shift_hours
+  FROM `bigquery-public-data.chicago_taxi_trips.taxi_trips`
+  WHERE trip_start_timestamp BETWEEN TIMESTAMP('2023-10-01') AND TIMESTAMP('2023-12-31')
+  GROUP BY taxi_id, DATE(trip_start_timestamp)
+  HAVING TIMESTAMP_DIFF(MAX(trip_end_timestamp), MIN(trip_start_timestamp), HOUR) > 12
+)
+
+SELECT
+  taxi_id,
+  COUNT(*) AS long_shift_days,
+  AVG(shift_hours) AS avg_shift_hours
+FROM daily_shifts
+GROUP BY taxi_id
+ORDER BY long_shift_days DESC, avg_shift_hours DESC
+LIMIT 100;
+    );
+  
+15:39:18.307182 [error]: dbt1014: Error executing materialization macro 'dbt_bigquery.materialization_table_bigquery' for model model.chicago-taxi-analytics.q2_top_overworkers: [BigQuery] googleapi: Error 400: Syntax error: Expected ")" but got ";" at [34:10], invalidQuery (Query: https://console.cloud.google.com/bigquery?project=chicago-taxi-analytics&j=bq:US:miw7qKU5AZTjekUVoadlY8R4qDs&page=queryresults)
+(in compiled\models\marts\q2_top_overworkers.sql:1:13)
+(in dbt_internal_packages\dbt-bigquery\macros\materializations\table.sql:33:12)
+(in dbt_internal_packages\dbt-adapters\macros\etc\statement.sql:14:35)
+  --> compiled\models\marts\q2_top_overworkers.sql:1:13
+15:39:18.307255 [info ]:     Failed [  6.00s] model analytics.q2_top_overworkers (table)
+15:39:18.309080 [debug]: Finished running [  5.46s] model analytics.q2_top_overworkers [error]
+15:39:18.309606 [info ]: Finished running [  5.47s] (1 nodes, 0 skipped, 1 errors)
+15:39:18.458086 [info ]: 
+==================== Execution Summary =====================
+Finished 'run' with 1 error for target 'dev' [9.8s]
+Processed: 1 model
+Summary: 1 total | 1 error
+==================== 2026-01-08T15:40:35.104134Z | 019b9e44-4d9d-7171-a92a-f51dd34813fa ====================
+15:40:35.104242 [info ]: dbt-fusion 2.0.0-preview.92
+15:40:35.105524 [info ]: Started loading project
+15:40:35.112647 [info ]: Loading ~/.dbt/profiles.yml
+15:40:35.212203 [info ]: Finished loading project [  0.11s]
+15:40:35.213231 [info ]: Started parsing
+15:40:35.256511 [info ]: Finished parsing [  0.04s]
+15:40:35.275176 [info ]: Started scheduling
+15:40:35.275617 [info ]: Finished scheduling [  0.00s]
+15:40:35.419698 [info ]: Started building task graph
+15:40:35.420230 [info ]: Finished building task graph [  0.00s]
+15:40:38.897926 [debug]: Query executed on node unknown:
+/* {"app": "dbt", "connection_name": "", "dbt_version": "2.0.0", "profile_name": "my_bigquery_project", "target_name": "dev"} */
+
+    select distinct schema_name from `chicago-taxi-analytics`.INFORMATION_SCHEMA.SCHEMATA;
+  
+15:40:38.898243 [info ]: Started rendering (1 nodes)
+15:40:38.898636 [info ]: Started model analytics.q2_top_overworkers
+15:40:38.898664 [debug]: Started rendering model analytics.q2_top_overworkers
+15:40:38.900386 [debug]: Finished rendering [  0.00s] model analytics.q2_top_overworkers [success]
+15:40:38.901177 [info ]: Finished rendering [  0.00s] (1 nodes, 0 skipped, 0 errors)
+15:40:38.901749 [info ]: Started analyzing (1 nodes)
+15:40:38.901912 [debug]: Started analyzing model analytics.q2_top_overworkers
+15:40:38.953894 [debug]: Finished analyzing [  0.05s] model analytics.q2_top_overworkers [success]
+15:40:38.955019 [info ]: Finished analyzing [  0.05s] (1 nodes, 0 skipped, 0 errors)
+15:40:38.956177 [info ]: Started running (1 nodes)
+15:40:38.956311 [debug]: Started running model analytics.q2_top_overworkers
+15:40:42.433569 [debug]: Query executed on node model.chicago-taxi-analytics.q2_top_overworkers:
+SELECT
+    table_catalog,
+    table_schema,
+    table_name,
+    table_type
+FROM 
+    `chicago-taxi-analytics`.`analytics`.INFORMATION_SCHEMA.TABLES
+15:40:42.436293 [debug]: Writing runtime sql for node "model.chicago-taxi-analytics.q2_top_overworkers"
+15:40:47.233787 [debug]: Query executed on node model.chicago-taxi-analytics.q2_top_overworkers:
+/* {"app": "dbt", "dbt_version": "2.0.0", "node_id": "model.chicago-taxi-analytics.q2_top_overworkers", "profile_name": "my_bigquery_project", "target_name": "dev"} */
+
+  
+    
+
+    create or replace table `chicago-taxi-analytics`.`analytics`.`q2_top_overworkers`
+      
+    
+    
+
+    
+    OPTIONS()
+    as (
+      
+
+WITH daily_shifts AS (
+    SELECT
+        taxi_id,
+        DATE(trip_start_timestamp) AS trip_date,
+        TIMESTAMP_DIFF(
+            MAX(trip_end_timestamp),
+            MIN(trip_start_timestamp),
+            HOUR
+        ) AS shift_hours
+    FROM `chicago-taxi-analytics`.`analytics`.`stg_taxi_trips`
+    WHERE trip_start_timestamp BETWEEN
+          TIMESTAMP('2023-10-01')
+      AND TIMESTAMP('2023-12-31')
+    GROUP BY taxi_id, DATE(trip_start_timestamp)
+    HAVING shift_hours > 12
+)
+
+SELECT
+    taxi_id,
+    COUNT(*) AS long_shift_days,
+    AVG(shift_hours) AS avg_shift_hours
+FROM daily_shifts
+GROUP BY taxi_id
+ORDER BY long_shift_days DESC, avg_shift_hours DESC
+LIMIT 100
+    );
+  
+15:40:47.234673 [info ]:  Succeeded [  8.33s] model analytics.q2_top_overworkers (table)
+15:40:47.236057 [debug]: Finished running [  8.28s] model analytics.q2_top_overworkers [success]
+15:40:47.236484 [info ]: Finished running [  8.28s] (1 nodes, 0 skipped, 0 errors)
+15:40:47.388372 [info ]: 
+==================== Execution Summary =====================
+Finished 'run' successfully for target 'dev' [12.3s]
+Processed: 1 model
+Summary: 1 total | 1 success
+==================== 2026-01-08T16:47:38.714354Z | 019b9e81-b2d5-71e3-8db1-f521706e3e39 ====================
+16:47:38.714466 [info ]: dbt-fusion 2.0.0-preview.92
+16:47:38.715729 [info ]: Started loading project
+16:47:38.720575 [info ]: Loading ~/.dbt/profiles.yml
+16:47:38.816581 [info ]: Finished loading project [  0.10s]
+16:47:38.817674 [info ]: Started parsing
+16:47:38.858206 [info ]: Finished parsing [  0.04s]
+16:47:38.876884 [info ]: Started scheduling
+16:47:38.877414 [info ]: Finished scheduling [  0.00s]
+16:47:39.023398 [info ]: Started building task graph
+16:47:39.023967 [info ]: Finished building task graph [  0.00s]
+16:47:42.541298 [debug]: Query executed on node unknown:
+/* {"app": "dbt", "connection_name": "", "dbt_version": "2.0.0", "profile_name": "my_bigquery_project", "target_name": "dev"} */
+
+    select distinct schema_name from `chicago-taxi-analytics`.INFORMATION_SCHEMA.SCHEMATA;
+  
+16:47:42.541650 [info ]: Started rendering (1 nodes)
+16:47:42.541938 [info ]: Started model analytics.q3_holiday_trips
+16:47:42.541965 [debug]: Started rendering model analytics.q3_holiday_trips
+16:47:42.543589 [debug]: Finished rendering [  0.00s] model analytics.q3_holiday_trips [success]
+16:47:42.543956 [info ]: Finished rendering [  0.00s] (1 nodes, 0 skipped, 0 errors)
+16:47:42.544426 [info ]: Started analyzing (1 nodes)
+16:47:42.544551 [debug]: Started analyzing model analytics.q3_holiday_trips
+16:47:42.641793 [debug]: Finished analyzing [  0.10s] model analytics.q3_holiday_trips [success]
+16:47:42.642848 [info ]: Finished analyzing [  0.10s] (1 nodes, 0 skipped, 0 errors)
+16:47:42.643727 [info ]: Started running (1 nodes)
+16:47:42.643862 [debug]: Started running model analytics.q3_holiday_trips
+16:47:46.025499 [debug]: Query executed on node model.chicago-taxi-analytics.q3_holiday_trips:
+SELECT
+    table_catalog,
+    table_schema,
+    table_name,
+    table_type
+FROM 
+    `chicago-taxi-analytics`.`analytics`.INFORMATION_SCHEMA.TABLES
+16:47:46.028205 [debug]: Writing runtime sql for node "model.chicago-taxi-analytics.q3_holiday_trips"
+16:47:50.666278 [debug]: Query executed on node model.chicago-taxi-analytics.q3_holiday_trips:
+/* {"app": "dbt", "dbt_version": "2.0.0", "node_id": "model.chicago-taxi-analytics.q3_holiday_trips", "profile_name": "my_bigquery_project", "target_name": "dev"} */
+
+  
+    
+
+    create or replace table `chicago-taxi-analytics`.`analytics`.`q3_holiday_trips`
+      
+    
+    
+
+    
+    OPTIONS()
+    as (
+      
+
+WITH trips_per_day AS (
+    SELECT
+        DATE(trip_start_timestamp) AS trip_date,
+        COUNT(*) AS total_trips
+    FROM `chicago-taxi-analytics`.`analytics`.`stg_taxi_trips`
+    WHERE trip_start_timestamp BETWEEN
+          TIMESTAMP('2023-10-01')
+      AND TIMESTAMP('2023-12-31')
+    GROUP BY trip_date
+),
+
+us_holidays AS (
+    SELECT DATE('2023-10-10') AS holiday_date UNION ALL  -- Veterans Day
+    SELECT DATE('2023-11-23') UNION ALL                  -- Thanksgiving
+    SELECT DATE('2023-12-25')                            -- Christmas
+)
+
+SELECT
+    t.trip_date,
+    t.total_trips,
+    CASE
+        WHEN h.holiday_date IS NOT NULL THEN 'Holiday'
+        ELSE 'Non-Holiday'
+    END AS day_type
+FROM trips_per_day t
+LEFT JOIN us_holidays h
+    ON t.trip_date = h.holiday_date
+ORDER BY t.trip_date
+    );
+  
+16:47:50.667076 [info ]:  Succeeded [  8.12s] model analytics.q3_holiday_trips (table)
+16:47:50.668447 [debug]: Finished running [  8.02s] model analytics.q3_holiday_trips [success]
+16:47:50.669826 [info ]: Finished running [  8.03s] (1 nodes, 0 skipped, 0 errors)
+16:47:50.837102 [info ]: 
+==================== Execution Summary =====================
+Finished 'run' successfully for target 'dev' [12.1s]
+Processed: 1 model
+Summary: 1 total | 1 success
